@@ -23,7 +23,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			;
 		
 		
-		
 		http.formLogin()
 			.loginPage("/loginPage")
 			.loginProcessingUrl("/login/proc")
@@ -43,8 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 		web.ignoring()
-			;
-	}
+	;
+}
 	
 	
 	
