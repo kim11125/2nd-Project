@@ -1,7 +1,7 @@
 package project.domain.dto;
 
 import lombok.Data;
-import project.domain.entity.MemberEntity;
+import project.domain.entity.member.MemberEntity;
 
 @Data
 public class MemberDto {

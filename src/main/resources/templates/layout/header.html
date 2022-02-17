@@ -2,6 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org"
 xmlns:sec="http://thymeleaf.org/extras/spring-security">
 	<body th:fragment="header">
+		<p>
+			<a href="/">HOME</a>
+		</p>
 		<p sec:authorize="isAnonymous">
 			<a href="/loginPage">로그인</a>
 			<a href="/reg">회원가입</a>

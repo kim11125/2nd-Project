@@ -1,4 +1,4 @@
-package project.domain.entity;
+package project.domain.entity.member;
 
 import java.util.Optional;
 

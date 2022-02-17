@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
 import project.domain.dto.MemberDto;
-import project.domain.entity.MemberEntity;
-import project.domain.entity.MemberEntityRepository;
+import project.domain.entity.member.MemberEntity;
+import project.domain.entity.member.MemberEntityRepository;
 import project.security.MemberGrade;
 import project.service.MemberService;
 

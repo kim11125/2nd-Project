@@ -6,13 +6,13 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
 import lombok.Data;
-import project.domain.entity.MemberEntity;
+import project.domain.entity.member.MemberEntity;
 
 @Data
 public class MyUserDetails extends User{
 
 	//principal로 접근 가능하게 할 것들
-	private long mno;
+	private Long mno;
 	private String name;
 	
 	public MyUserDetails(MemberEntity entity) {

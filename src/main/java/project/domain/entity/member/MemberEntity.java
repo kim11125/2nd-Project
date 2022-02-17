@@ -1,4 +1,4 @@
-package project.domain.entity;
+package project.domain.entity.member;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -18,6 +18,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import project.domain.entity.DateEntity;
 import project.security.MemberGrade;
 
 
@@ -31,7 +32,7 @@ public class MemberEntity extends DateEntity{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long mno;
+	private Long mno;
 	@Column(nullable = false, unique = true)
 	private String userId;
 	@Column(nullable = false)
