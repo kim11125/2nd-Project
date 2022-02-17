@@ -32,15 +32,18 @@ public class MemberEntity extends DateEntity{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long mno;
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private String userId;
 	@Column(nullable = false)
 	private String pw;
+	@Column(nullable = false)
+	private String name;
 	
 	
 	//멤버롤
 	@Enumerated(EnumType.STRING) //DB에 저장시 String으로
 	@ElementCollection(fetch = FetchType.EAGER)
+	@Builder.Default
 	private Set<MemberGrade> gradeSet = new HashSet<>();
 	
 	public void addRole(MemberGrade grade) {

@@ -17,7 +17,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-			.antMatchers("/","/login", "/reg").permitAll()
+			.antMatchers("/","/loginPage", "/reg").permitAll()
 			//나머지는 인증
 			.anyRequest().authenticated()
 			;
@@ -28,8 +28,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.loginProcessingUrl("/login/proc")
 			.usernameParameter("userId")
 			.passwordParameter("pw")
+			.defaultSuccessUrl("/")
 			;
 			
+		http.logout()
+			.logoutSuccessUrl("/")
+			;
 	}
 	
 	//패스워드 암호화

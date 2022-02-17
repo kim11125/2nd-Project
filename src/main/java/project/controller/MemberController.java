@@ -1,5 +1,10 @@
 package project.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,9 +32,17 @@ public class MemberController {
 	}
 	
 	//로그인페이지
-	@GetMapping("/login")
+	@GetMapping("/loginPage")
 	public String login() {
 		return "/member/login";
 	}
+	
+	//로그아웃페이지
+	@GetMapping(value = "/logout")
+	public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
+		new SecurityContextLogoutHandler().logout(request, response, SecurityContextHolder.getContext().getAuthentication());
+		return "redirect:/";
+	}
+
 	
 }

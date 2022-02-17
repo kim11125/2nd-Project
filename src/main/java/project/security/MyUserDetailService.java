@@ -6,15 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
+import lombok.RequiredArgsConstructor;
 import project.domain.entity.MemberEntity;
 import project.domain.entity.MemberEntityRepository;
 
+@RequiredArgsConstructor
+@Service
 public class MyUserDetailService implements UserDetailsService{
 	
 	@Autowired
 	MemberEntityRepository repository;
 	
+	//로그인시 회원정보 저장
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 

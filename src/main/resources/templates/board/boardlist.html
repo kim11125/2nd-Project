@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
-		<link rel="shortcut icon" href="#">
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
 	</head>
@@ -10,7 +8,10 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 		<th:block th:insert="~{/layout/header :: header}" />
 		<section>
 			<div>
-				<a href="/board">게시판</a>
+				<button>글쓰기</button>
+			</div>
+			<div>
+				<p>게시판내용</p>
 			</div>
 		</section>
 	</body>
